@@ -37,8 +37,10 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
     runtimeOnly("com.h2database:h2")
     implementation("io.micronaut:micronaut-validation")
+    implementation("org.springframework.security:spring-security-crypto:5.4.2")
     implementation("io.micronaut.security:micronaut-security-jwt")
 
+    runtime("io.micronaut.spring:micronaut-spring-boot")
     runtimeOnly("ch.qos.logback:logback-classic")
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
     runtimeOnly("org.postgresql:postgresql")

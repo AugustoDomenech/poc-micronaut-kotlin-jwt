@@ -2,13 +2,18 @@ micronaut:
   application:
     name: pocMicronautKotlinJwt
   security:
+    endpoints:
+      login:
+        enabled: true
     authentication: bearer
     token:
       jwt:
         signatures:
           secret:
             generator:
-              secret: '"${JWT_GENERATOR_SIGNATURE_SECRET:ASDLASJQ3NM2A123K12ASDSDKLFDSKF}"'
+              secret: '"${JWT_GENERATOR_SIGNATURE_SECRET:OTk2NTE1fQ.6Uow2oGZ6mXGg_29aJ0OstDyLE8dg_05OpNF2NlUU8Q}"'
+              jws-algorithm: HS256
+
 datasources:
   default:
     url: jdbc:postgresql://localhost:5432/anime

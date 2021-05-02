@@ -4,9 +4,12 @@ import com.domenech.domain.entity.Anime
 import com.domenech.service.AnimeService
 import io.micronaut.http.HttpResponse
 import io.micronaut.http.annotation.*
+import io.micronaut.security.annotation.Secured
+import io.micronaut.security.rules.SecurityRule
 
 
 @Controller(value = "/animes")
+@Secured(SecurityRule.IS_AUTHENTICATED)
 class AnimeController(val animeService: AnimeService) {
 
     @Get(value = "/{id}")
