@@ -11,7 +11,7 @@ class AnimeController(val animeService: AnimeService) {
 
     @Get(value = "/{id}")
     fun findById(@PathVariable id: Long): HttpResponse<Anime> {
-        return HttpResponse.ok( animeService.findById(id).get() )
+        return HttpResponse.ok( animeService.findById(id))
     }
 
     @Get(value = "/find/{name}")

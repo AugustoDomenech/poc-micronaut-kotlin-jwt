@@ -1,8 +1,8 @@
 package com.domenech.service
 
 import com.domenech.domain.entity.Anime
+import com.domenech.exception.BadRequestException
 import com.domenech.repository.AnimeRepository
-import io.micronaut.context.annotation.Executable
 import java.util.*
 import javax.inject.Singleton
 
@@ -24,8 +24,8 @@ class AnimeService(val repository: AnimeRepository) {
         repository.delete(anime.get())
     }
 
-    fun findById(id: Long): Optional<Anime> {
-        return repository.findById(id)
+    fun findById(id: Long): Anime {
+        return repository.findById(id).orElseThrow{ BadRequestException("Anime not found") }
     }
 
     fun findByName(name: String): List<Anime> {
