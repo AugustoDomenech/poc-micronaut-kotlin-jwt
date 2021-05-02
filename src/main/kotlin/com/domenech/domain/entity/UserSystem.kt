@@ -7,11 +7,11 @@ import javax.persistence.GenerationType
 import javax.persistence.Id
 
 @Entity
-data class UserSytem(
+data class UserSystem(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long,
-    var userName: String?,
+    var userName: String,
     var password: String?
 
 ) {
