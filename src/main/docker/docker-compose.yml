@@ -1,0 +1,16 @@
+version: "3.6"
+services:
+  db:
+    image: postgres:11.5-alpine
+    container_name: anime_postgresql
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: anime
+      POSTGRES_DB: anime
+    ports:
+      - 5432:5432
+    volumes:
+      - anime_data:/var/lib/anime
+
+volumes:
+  anime_data:
