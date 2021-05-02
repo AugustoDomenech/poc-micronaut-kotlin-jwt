@@ -1,7 +1,14 @@
 micronaut:
   application:
     name: pocMicronautKotlinJwt
-
+  security:
+    authentication: bearer
+    token:
+      jwt:
+        signatures:
+          secret:
+            generator:
+              secret: '"${JWT_GENERATOR_SIGNATURE_SECRET:ASDLASJQ3NM2A123K12ASDSDKLFDSKF}"'
 datasources:
   default:
     url: jdbc:postgresql://localhost:5432/anime
